@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dylan Villacorta | Portafolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">DV</a>
+      <ul class="nav-links">
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <p class="hero-greeting">Hola, soy</p>
+      <h1 class="hero-name">Dylan Villacorta</h1>
+      <p class="hero-role">Desarrollador de Software</p>
+      <p class="hero-tagline">
+        Construyo soluciones robustas con código limpio y eficiente.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+        <a href="#contact" class="btn btn-outline">Contactar</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">Sobre mí</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            Soy un desarrollador apasionado por la tecnología y la creación de 
+            software de calidad. Me especializo en el desarrollo backend y disfruto 
+            trabajar con múltiples lenguajes y paradigmas de programación.
+          </p>
+          <p>
+            Me motiva resolver problemas complejos y aprender constantemente 
+            nuevas herramientas y metodologías para mejorar mis habilidades.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2 class="section-title">Habilidades</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go">
+          </div>
+          <h3>Go</h3>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+          </div>
+          <h3>Python</h3>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+          </div>
+          <h3>JavaScript</h3>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+          </div>
+          <h3>TypeScript</h3>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+          </div>
+          <h3>Java</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Proyectos</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3 class="project-title">API REST con Go</h3>
+          <p class="project-desc">
+            Microservicio de alto rendimiento construido con Go, 
+            utilizando gorilla/mux y PostgreSQL.
+          </p>
+          <div class="project-tags">
+            <span>Go</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Web Scraper en Python</h3>
+          <p class="project-desc">
+            Herramienta de extracción de datos web usando BeautifulSoup 
+            y procesamiento asíncrono.
+          </p>
+          <div class="project-tags">
+            <span>Python</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Aplicación Full Stack</h3>
+          <p class="project-desc">
+            Plataforma web con frontend en React + TypeScript y 
+            backend en Node.js.
+          </p>
+          <div class="project-tags">
+            <span>TypeScript</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Sistema Empresarial</h3>
+          <p class="project-desc">
+            Aplicación empresarial con Spring Boot, 
+            arquitectura de microservicios y base de datos Oracle.
+          </p>
+          <div class="project-tags">
+            <span>Java</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+      <p class="contact-text">
+        ¿Tienes un proyecto en mente? Hablemos.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:dyfervillacorta@outlook.com" class="contact-link">
+          <span>Email</span>
+        </a>
+        <a href="https://github.com/dylanvillacorta" target="_blank" rel="noopener" class="contact-link">
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/dylan-villacorta-poma-531ba0274" target="_blank" rel="noopener" class="contact-link">
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Dylan Villacorta. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
