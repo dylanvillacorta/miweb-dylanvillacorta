@@ -18,7 +18,7 @@ services:
     security_opt:
       - no-new-privileges:true
     ports:
-      - "8080:80"
+      - "${PORT}:80"
     deploy:
       resources:
         limits:
