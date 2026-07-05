@@ -26,7 +26,7 @@ function updateCountdown() {
   document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
   document.getElementById('centiseconds').textContent = String(centiseconds).padStart(2, '0');
 
-  requestAnimationFrame(updateCountdown);
 }
 
-requestAnimationFrame(updateCountdown);
+updateCountdown();
+setInterval(updateCountdown, 10);
