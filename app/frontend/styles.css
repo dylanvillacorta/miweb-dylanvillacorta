@@ -294,28 +294,353 @@ section {
 .contact-links {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .contact-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   padding: 12px 24px;
   background-color: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   color: var(--text);
   text-decoration: none;
+  font-family: inherit;
   font-size: 0.95rem;
-  transition: all 0.25s;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  line-height: 1;
 }
 
 .contact-link:hover {
   border-color: var(--accent);
   color: var(--accent);
   transform: translateY(-2px);
+}
+
+.contact-link:active {
+  transform: translateY(0);
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.contact-link:hover .contact-icon {
+  transform: scale(1.1);
+}
+
+/* Contact direct email badge */
+.contact-email-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.email-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--border);
+  border-radius: 20px;
+  padding: 6px 14px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.email-badge-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: rgba(0, 212, 170, 0.08);
+}
+
+.email-badge-btn .check-icon {
+  display: none;
+}
+
+.email-badge-btn.copied {
+  border-color: var(--accent);
+  border-style: solid;
+  color: var(--accent);
+  background-color: rgba(0, 212, 170, 0.15);
+}
+
+.email-badge-btn.copied .copy-icon {
+  display: none;
+}
+
+.email-badge-btn.copied .check-icon {
+  display: inline-block;
+}
+
+/* Email Modal */
+.email-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.email-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.email-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.email-modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transform: scale(0.92) translateY(12px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.email-modal.active .email-modal-container {
+  transform: scale(1) translateY(0);
+}
+
+.email-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.email-modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.email-modal-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.email-modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.email-modal-close:hover {
+  color: var(--text);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Modal direct email card */
+.email-address-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 22px;
+}
+
+.email-address-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.email-address-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.email-address-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  word-break: break-all;
+  user-select: all;
+}
+
+.btn-copy-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(0, 212, 170, 0.12);
+  border: 1px solid rgba(0, 212, 170, 0.3);
+  color: var(--accent);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-copy-action:hover {
+  background-color: var(--accent);
+  color: #0f0f0f;
+}
+
+.btn-copy-action .check-icon {
+  display: none;
+}
+
+.btn-copy-action.copied {
+  background-color: var(--accent);
+  color: #0f0f0f;
+  border-color: var(--accent);
+}
+
+.btn-copy-action.copied .copy-icon {
+  display: none;
+}
+
+.btn-copy-action.copied .check-icon {
+  display: inline-block;
+}
+
+/* Modal Separator */
+.email-modal-separator {
+  position: relative;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.email-modal-separator::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: var(--border);
+  z-index: 0;
+}
+
+.email-modal-separator span {
+  position: relative;
+  display: inline-block;
+  background-color: var(--card-bg);
+  padding: 0 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Provider Links */
+.email-providers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.email-provider-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.25s ease;
+}
+
+.email-provider-card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.provider-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.provider-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.provider-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.provider-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.provider-arrow {
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.email-provider-card:hover .provider-arrow {
+  color: var(--accent);
+  transform: translateX(3px);
 }
 
 /* Footer */
@@ -345,5 +670,19 @@ section {
 @media (max-width: 480px) {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .email-modal-container {
+    padding: 22px 18px;
+  }
+
+  .email-address-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-copy-action {
+    width: 100%;
+    justify-content: center;
   }
 }
