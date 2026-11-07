@@ -27,5 +27,19 @@ function updateCountdown() {
   document.getElementById('deciseconds').textContent = String(deciseconds);
 }
 
+// Accessible summary for screen readers, refreshed once per minute
+function updateSummary() {
+  const el = document.getElementById('countdownSummary');
+  const distance = targetDate - new Date().getTime();
+  if (!el || distance < 0) return;
+  const d = Math.floor(distance / 86400000);
+  const h = Math.floor((distance % 86400000) / 3600000);
+  const m = Math.floor((distance % 3600000) / 60000);
+  el.textContent = 'Faltan ' + d + ' días, ' + h + ' horas y ' + m + ' minutos.';
+}
+
 updateCountdown();
-setInterval(updateCountdown, 50);
+updateSummary();
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+setInterval(updateCountdown, reduceMotion ? 1000 : 50);
+setInterval(updateSummary, 60000);
