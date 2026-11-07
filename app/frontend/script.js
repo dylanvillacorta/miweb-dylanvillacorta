@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Update copyright year
-  const yearSpan = document.querySelector(".footer p");
+  const yearSpan = document.querySelector(".footer-copy");
   if (yearSpan) {
     yearSpan.textContent = yearSpan.textContent.replace(
       "2026",

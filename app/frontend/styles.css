@@ -652,6 +652,24 @@ section {
   font-size: 0.85rem;
 }
 
+.footer-legal {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 10px;
+}
+
+.footer-legal a {
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-legal a:hover {
+  color: var(--accent);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {
