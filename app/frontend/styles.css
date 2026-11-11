@@ -119,7 +119,10 @@ a {
 .sheet-title {
   grid-column: 1;
   grid-row: 1;
-  align-self: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   padding: clamp(28px, 6vw, 80px) clamp(24px, 5vw, 72px);
 }
 
@@ -137,8 +140,12 @@ a {
   display: block;
 }
 
+.sheet-lead {
+  margin-top: auto;
+  padding-top: 28px;
+}
+
 .role {
-  margin-top: 28px;
   font-size: clamp(1rem, 2vw, 1.3rem);
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -181,8 +188,8 @@ a {
 .scene-shadow {
   fill: var(--ink);
   transform-box: view-box;
-  transform-origin: 140px 500px;
-  transform: skewX(-24deg) scale(2.4, 4.6);
+  transform-origin: 139px 460px;
+  transform: skewX(-24deg) scale(2.0, 3.0);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -193,10 +200,10 @@ a {
 
 @keyframes swing {
   from {
-    transform: skewX(-18deg) scale(2.4, 4.6);
+    transform: skewX(-18deg) scale(2.0, 3.0);
   }
   to {
-    transform: skewX(-28deg) scale(2.4, 4.4);
+    transform: skewX(-28deg) scale(2.0, 2.8);
   }
 }
 
@@ -430,6 +437,34 @@ section {
 }
 
 /* Contact */
+.contact {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-shadow {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: clamp(240px, 35vw, 480px);
+  height: clamp(160px, 28vw, 320px);
+  color: var(--ink);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-shadow svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+.contact .wrap {
+  position: relative;
+  z-index: 1;
+}
+
 .contact-text {
   max-width: 18ch;
   margin-bottom: 36px;
@@ -476,8 +511,7 @@ section {
   border-style: solid;
 }
 
-.email-badge-btn .check-icon,
-.btn-copy-action .check-icon {
+.email-badge-btn .check-icon {
   display: none;
 }
 
@@ -486,239 +520,12 @@ section {
   border-style: solid;
 }
 
-.email-badge-btn.copied .copy-icon,
-.btn-copy-action.copied .copy-icon {
+.email-badge-btn.copied .copy-icon {
   display: none;
 }
 
-.email-badge-btn.copied .check-icon,
-.btn-copy-action.copied .check-icon {
+.email-badge-btn.copied .check-icon {
   display: inline-block;
-}
-
-/* Email modal */
-.email-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
-}
-
-.email-modal.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.email-modal-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(20, 17, 15, 0.82);
-}
-
-.email-modal-container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 460px;
-  max-height: calc(100svh - 40px);
-  overflow-y: auto;
-  padding: 28px;
-  background-color: var(--paper);
-  color: var(--ink);
-  border: 2px solid var(--ink);
-  transform: translateY(12px);
-  transition: transform 0.25s var(--ease);
-}
-
-.email-modal.active .email-modal-container {
-  transform: translateY(0);
-}
-
-.email-modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 22px;
-}
-
-.email-modal-title {
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: 1.6rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.email-modal-subtitle {
-  font-size: 0.92rem;
-  line-height: 1.4;
-  color: var(--ink-dim);
-}
-
-.email-modal-close {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-  background: transparent;
-  border: 2px solid transparent;
-  color: var(--ink);
-  cursor: pointer;
-}
-
-.email-modal-close:hover {
-  background-color: var(--amber);
-  border-color: var(--ink);
-}
-
-.email-address-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px 16px;
-  margin-bottom: 22px;
-  background-color: var(--paper-2);
-  border: 2px solid var(--ink);
-}
-
-.email-address-info {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.email-address-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-
-.email-address-value {
-  font-size: 0.95rem;
-  font-weight: 700;
-  word-break: break-all;
-  user-select: all;
-}
-
-.btn-copy-action {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 44px;
-  padding: 8px 14px;
-  background-color: var(--amber);
-  border: 2px solid var(--ink);
-  color: var(--ink);
-  font-family: inherit;
-  font-size: 0.85rem;
-  font-weight: 700;
-  cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
-}
-
-.btn-copy-action:hover,
-.btn-copy-action.copied {
-  background-color: var(--ink);
-  color: var(--amber);
-}
-
-.email-modal-separator {
-  position: relative;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.email-modal-separator::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  height: 2px;
-  background-color: var(--ink);
-}
-
-.email-modal-separator span {
-  position: relative;
-  display: inline-block;
-  padding: 0 12px;
-  background-color: var(--paper);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-
-.email-providers {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.email-provider-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 16px;
-  border: 2px solid var(--ink);
-  color: var(--ink);
-  text-decoration: none;
-  transition: background-color 0.2s var(--ease);
-}
-
-.email-provider-card:hover {
-  background-color: var(--amber);
-}
-
-.provider-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  flex-shrink: 0;
-  background-color: var(--paper-2);
-}
-
-.provider-details {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 0;
-}
-
-.provider-name {
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.provider-desc {
-  font-size: 0.82rem;
-  color: var(--ink-dim);
-}
-
-.email-provider-card:hover .provider-desc {
-  color: var(--ink);
-}
-
-.provider-arrow {
-  flex-shrink: 0;
 }
 
 /* Footer */
@@ -787,10 +594,6 @@ section {
   outline-offset: 3px;
 }
 
-.email-modal-container {
-  --focus: var(--ink);
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -805,12 +608,35 @@ section {
 @media (max-width: 900px) {
   .sheet {
     grid-template-columns: 1fr;
-    grid-template-rows: auto minmax(280px, 46svh) auto;
+    grid-template-rows: auto 28svh auto;
   }
 
   .sheet-title {
     grid-column: 1;
     grid-row: 1;
+    height: auto;
+    justify-content: flex-start;
+    padding: clamp(16px, 4vw, 24px) clamp(16px, 5vw, 24px) 12px;
+  }
+
+  .title {
+    font-size: clamp(2.8rem, 11vw, 4.2rem);
+  }
+
+  .sheet-lead {
+    margin-top: 10px;
+    padding-top: 0;
+  }
+
+  .role {
+    font-size: clamp(0.82rem, 2.4vw, 1.05rem);
+    letter-spacing: 0.08em;
+  }
+
+  .tagline {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    line-height: 1.4;
   }
 
   .wall {
@@ -820,17 +646,45 @@ section {
     border-top: 2px solid var(--ink);
   }
 
+  .scene-shadow {
+    transform: skewX(-20deg) scale(1.3, 1.8);
+  }
+
   .billing {
     grid-row: 3;
     grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px clamp(16px, 5vw, 24px) 14px;
   }
 
   .credits {
     grid-template-columns: 1fr;
   }
 
+  .credits a {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    min-height: 44px;
+    padding: 4px 0;
+  }
+
+  .credit-name {
+    font-size: 1.05rem;
+    line-height: 1.15;
+  }
+
+  .credit-stack {
+    text-align: left;
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
   .billing .btn {
     width: 100%;
+    min-height: 44px;
+    padding: 10px 20px;
   }
 
   .project {
@@ -847,9 +701,28 @@ section {
   }
 }
 
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .scene-shadow {
+    animation: swing-mobile 11s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes swing-mobile {
+  from {
+    transform: skewX(-15deg) scale(1.3, 1.8);
+  }
+  to {
+    transform: skewX(-24deg) scale(1.3, 1.7);
+  }
+}
+
 @media (max-width: 560px) {
   section {
     padding: 72px 0;
+  }
+
+  .contact {
+    padding-bottom: 88px;
   }
 
   .topbar {
@@ -857,26 +730,18 @@ section {
   }
 
   .nav-links {
-    gap: 0;
+    gap: 6px;
   }
 
   .nav-links a {
-    padding: 0 4px;
-    font-size: 0.7rem;
-    letter-spacing: 0.02em;
+    min-height: 44px;
+    padding: 0 6px;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
   }
 
-  .email-modal-container {
-    padding: 22px 18px;
-  }
-
-  .email-address-card {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .btn-copy-action {
-    width: 100%;
-    justify-content: center;
+  .contact-shadow {
+    width: 120px;
+    height: 60px;
   }
 }
