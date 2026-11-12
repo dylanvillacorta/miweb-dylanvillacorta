@@ -731,10 +731,6 @@ section {
     padding: 0 8px;
   }
 
-  .brand {
-    min-width: 36px;
-  }
-
   .nav-links {
     gap: 4px;
   }
