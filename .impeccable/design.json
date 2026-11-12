@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T17:53:00Z",
+  "title": "Design System: Dylan Villacorta Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel Crema",
+        "canonical": "#e9dfc7",
+        "tonalRamp": ["#6e624c", "#94856a", "#b5a588", "#d1c3a6", "#e9dfc7", "#eee5d2", "#f5efe3", "#fcfbf7"]
+      },
+      "paper-dim": {
+        "role": "neutral",
+        "displayName": "Papel Tono Secundario",
+        "canonical": "#ddd2b6",
+        "tonalRamp": ["#61573e", "#867a5a", "#a99c77", "#c7bb97", "#ddd2b6", "#e5dcbe", "#ede6ce", "#f7f4e7"]
+      },
+      "paper-on-ink": {
+        "role": "neutral",
+        "displayName": "Papel sobre Tinta",
+        "canonical": "#d8cfb8",
+        "tonalRamp": ["#5d5543", "#827760", "#a4997e", "#c3b89d", "#d8cfb8", "#e1d9c4", "#ebe5d4", "#f6f3e9"]
+      },
+      "paper-line": {
+        "role": "neutral",
+        "displayName": "Regla de Crédito",
+        "canonical": "rgba(233, 223, 199, 0.35)",
+        "tonalRamp": ["rgba(233,223,199,0.1)", "rgba(233,223,199,0.2)", "rgba(233,223,199,0.3)", "rgba(233,223,199,0.35)", "rgba(233,223,199,0.5)", "rgba(233,223,199,0.65)", "rgba(233,223,199,0.8)", "rgba(233,223,199,0.95)"]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Tinta Negra",
+        "canonical": "#14110f",
+        "tonalRamp": ["#070605", "#14110f", "#26221f", "#3d3733", "#5b544e", "#827972", "#b0a8a1", "#e3dfdb"]
+      },
+      "ink-dim": {
+        "role": "neutral",
+        "displayName": "Tinta Atenuada",
+        "canonical": "#4a4236",
+        "tonalRamp": ["#1f1a14", "#332c23", "#4a4236", "#685e4f", "#8a7e6c", "#ab9f8d", "#cdcaa4", "#ebe8dc"]
+      },
+      "amber": {
+        "role": "primary",
+        "displayName": "Ámbar Muro",
+        "canonical": "#d79b1f",
+        "tonalRamp": ["#543905", "#7d5509", "#a87512", "#c48a18", "#d79b1f", "#e4b248", "#f0cc7b", "#f9e7b8"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Nombre del desarrollador en el hero y títulos principales."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Encabezados de sección H2 y listado masivo de habilidades."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de proyecto y nombres en el bloque de créditos."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Párrafos descriptivos, texto sobre mí y lectura continua."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Etiquetas técnicas de stack, enlaces de navegación y botones en mayúsculas."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "swing",
+        "value": "11s ease-in-out infinite alternate",
+        "purpose": "Oscilación sutil de la sombra arrojada en la escena vectorial del hero."
+      },
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Curva de aceleración para transiciones de estado e inversión de tintas."
+      },
+      {
+        "name": "transition-base",
+        "value": "0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Duración base de transiciones en botones, enlaces y proyectos."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "desktop",
+        "value": "1180px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "mobile",
+        "value": "560px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Topbar",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Barra de navegación fija con logotipo técnico DV y enlaces en mayúsculas.",
+      "html": "<header class=\"ds-topbar\"><a href=\"#\" class=\"ds-brand\"><svg viewBox=\"0 0 64 64\" width=\"36\" height=\"36\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M8 14L14 8H32C45.3 8 56 18.7 56 32C56 45.3 45.3 56 32 56H14L8 50ZM17.1 21.2L19.3 19L25.6 19L30.1 29.6L34.6 19L40.9 19L43.1 21.2L32.1 43.5L30.6 45L29.6 45L28.1 43.5Z\"/></svg></a><nav><ul class=\"ds-nav-links\"><li><a href=\"#\">Proyectos</a></li><li><a href=\"#\">Sobre mí</a></li><li><a href=\"#\">Contacto</a></li></ul></nav></header>",
+      "css": ".ds-topbar{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background-color:#e9dfc7;border-bottom:2px solid #14110f;color:#14110f}.ds-brand{display:inline-flex;align-items:center;min-width:44px;min-height:44px;color:#14110f;text-decoration:none}.ds-nav-links{display:flex;list-style:none;gap:8px;margin:0;padding:0}.ds-nav-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;color:#14110f;transition:background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1)}.ds-nav-links a:hover{background-color:#d79b1f}.ds-nav-links a:focus-visible{outline:3px solid #14110f;outline-offset:3px}"
+    },
+    {
+      "name": "Amber Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Botón de acción principal con fondo ámbar y texto tinta.",
+      "html": "<a class=\"ds-btn ds-btn-amber\" href=\"#\">Contactar</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 28px;border:2px solid #14110f;font-family:\"Segoe UI\",sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),color 0.2s cubic-bezier(0.16, 1, 0.3, 1)}.ds-btn-amber{background-color:#d79b1f;color:#14110f}.ds-btn-amber:hover{background-color:#14110f;color:#d79b1f}.ds-btn-amber:focus-visible{outline:3px solid #14110f;outline-offset:3px}"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Botón secundario de línea con fondo transparente.",
+      "html": "<a class=\"ds-btn ds-btn-line\" href=\"#\">GitHub</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 28px;border:2px solid #14110f;font-family:\"Segoe UI\",sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),color 0.2s cubic-bezier(0.16, 1, 0.3, 1)}.ds-btn-line{background:transparent;color:#14110f}.ds-btn-line:hover{background-color:#14110f;color:#e9dfc7}.ds-btn-line:focus-visible{outline:3px solid #14110f;outline-offset:3px}"
+    },
+    {
+      "name": "Billing Block Item",
+      "kind": "custom",
+      "refersTo": "item",
+      "description": "Fila reglada de crédito de proyecto dentro del bloque inferior del hero.",
+      "html": "<div class=\"ds-billing-row\"><a href=\"#\" class=\"ds-credit-link\"><span class=\"ds-credit-name\">API REST con Go</span><span class=\"ds-credit-stack\">Go</span></a></div>",
+      "css": ".ds-billing-row{background-color:#14110f;padding:0 16px}.ds-credit-link{display:flex;justify-content:space-between;align-items:baseline;min-height:48px;padding:10px 0;border-top:1px solid rgba(233,223,199,0.35);text-decoration:none;color:#e9dfc7}.ds-credit-name{font-family:\"Anton\",\"Arial Narrow\",sans-serif;font-size:1.35rem;letter-spacing:0.03em;text-transform:uppercase;color:#e9dfc7;transition:color 0.2s cubic-bezier(0.16, 1, 0.3, 1)}.ds-credit-stack{font-size:0.85rem;color:#d79b1f}.ds-credit-link:hover .ds-credit-name{color:#d79b1f}.ds-credit-link:focus-visible{outline:3px solid #d79b1f;outline-offset:3px}"
+    },
+    {
+      "name": "Project Row",
+      "kind": "custom",
+      "refersTo": "item",
+      "description": "Fila de proyecto en lista reglada con inversión completa a ámbar en hover.",
+      "html": "<article class=\"ds-project\"><h3 class=\"ds-project-title\">API REST con Go</h3><p class=\"ds-project-stack\">Go</p><p class=\"ds-project-desc\">Microservicio de alto rendimiento construido con Go y PostgreSQL.</p></article>",
+      "css": ".ds-project{display:grid;grid-template-columns:5fr 2fr 5fr;gap:8px 32px;align-items:baseline;padding:28px 16px;border-top:2px solid #14110f;background-color:#e9dfc7;color:#14110f;transition:background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1)}.ds-project:hover{background-color:#d79b1f}.ds-project-title{font-family:\"Anton\",\"Arial Narrow\",sans-serif;font-size:2rem;letter-spacing:0.02em;text-transform:uppercase;margin:0}.ds-project-stack{font-size:0.85rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin:0}.ds-project-desc{font-size:1.05rem;line-height:1.6;margin:0}"
+    },
+    {
+      "name": "Copy Email Badge",
+      "kind": "button",
+      "refersTo": "badge",
+      "description": "Insignia con borde discontinuo para copiar el correo al portapapeles.",
+      "html": "<button type=\"button\" class=\"ds-email-badge\"><span class=\"ds-email-val\">dylanvillacortapoma@outlook.com</span><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\"/><path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\"/></svg><span class=\"ds-copy-text\">Copiar</span></button>",
+      "css": ".ds-email-badge{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;background:transparent;border:2px dashed #14110f;color:#14110f;font-family:\"Segoe UI\",sans-serif;font-size:0.92rem;font-weight:600;cursor:pointer;transition:background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1)}.ds-email-badge:hover{background-color:#d79b1f;border-style:solid}.ds-email-badge:focus-visible{outline:3px solid #14110f;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Cartel noir de dos tintas",
+    "overview": "El portafolio se concibe como un cartel cinematográfico noir impreso a dos tintas sobre pliego de papel crema. Rechaza deliberadamente las plantillas genéricas de tecnología y la cuadrícula convencional de tarjetas idénticas. Aquí, el nombre del desarrollador manda como título de cabecera y una sombra arrojada sobre un muro ámbar aporta toda la carga dramática.\n\nLa materialidad visual descansa sobre contrastes nítidos, planos puros y reglas tipográficas. No existen degradados, desenfoques gaussianos ni sombras difusas calculadas por software. Toda la tridimensionalidad y volumen provienen estrictamente de la geometría de los polígonos de sombra proyectada y los cortes angulares de siluetas vectoriales.",
+    "keyCharacteristics": [
+      "Dos tintas nítidas (#14110f y #d79b1f) sobre papel crema (#e9dfc7).",
+      "Tipografía de impacto comprimida (Anton local) combinada con sans del sistema para lectura.",
+      "Volumen y dramatismo exclusivamente mediante formas de sombra y polígonos de bordes rectos.",
+      "Cero degradados, cero desenfoques (blur), cero tarjetas flotantes y cero fuentes externas remotas.",
+      "Movimiento contenido: oscilación analógica sutil de la sombra vectorial con respeto riguroso a prefers-reduced-motion.",
+      "Accesibilidad como imperativo central con objetivo estricto WCAG 2.1 AA."
+    ],
+    "rules": [
+      {
+        "name": "The Two-Ink Doctrine",
+        "body": "En cualquier superficie, los elementos interactivos o decorativos se limitan estrictamente al juego binario entre la tinta negra (#14110f) y el ámbar (#d79b1f) sobre el papel (#e9dfc7). No se admiten colores terciarios ni desviaciones de tono.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Gradient Rule",
+        "body": "Queda prohibido el uso de degradados CSS (linear-gradient, radial-gradient) o filtros de desenfoque (filter: blur(), backdrop-filter). El contraste y la jerarquía se resuelven exclusivamente mediante superficies sólidas y líneas delimitadoras.",
+        "section": "colors"
+      },
+      {
+        "name": "The Local-Type Rule",
+        "body": "No se cargan fuentes remotas (prohibido Google Fonts o Typekit). La fuente de titulación se sirve estrictamente desde el servidor en formato local TTF precargado (<link rel=\"preload\">) y el resto utiliza la pila del sistema del usuario.",
+        "section": "typography"
+      },
+      {
+        "name": "The All-Caps Heading Rule",
+        "body": "Todo encabezado, título de proyecto, elemento de navegación y etiqueta funcional se renderiza en mayúsculas sostenidas con compensación de espaciado (letter-spacing).",
+        "section": "typography"
+      },
+      {
+        "name": "The Zero-Box-Shadow Rule",
+        "body": "Ningún componente ni superficie puede declarar box-shadow. El volumen se dibuja en el arte vectorial o no existe.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do limitar toda la gama cromática a papel (#e9dfc7), tinta (#14110f) y ámbar (#d79b1f).",
+      "Do mantener todas las esquinas en 0px de radio (ángulos rectos y estética de imprenta).",
+      "Do estructurar divisiones mediante filetes y bordes nítidos de 2px de tinta negra.",
+      "Do construir cualquier ilustración o silueta exclusivamente con polígonos de bordes rectos en SVG.",
+      "Do preservar el indicador visible de foco accesible de 3px (outline: 3px solid var(--focus); outline-offset: 3px).",
+      "Do respetar rigurosamente la directiva @media (prefers-reduced-motion: reduce) anulando cualquier animación o transición.",
+      "Do verificar contraste de color mínimo de 4.5:1 para texto normal bajo el estándar WCAG 2.1 AA."
+    ],
+    "donts": [
+      "Don't reintroducir paletas ajenas al cartel de dos tintas, temas oscuros globales ni gradientes.",
+      "Don't utilizar box-shadow ni border-radius en botones o secciones.",
+      "Don't crear tarjetas flotantes (\"cards\") con fondos sombreados; el listado de proyectos debe ser una lista reglada.",
+      "Don't importar tipografías externas mediante Google Fonts, Adobe Fonts o CDNs remotas.",
+      "Don't incorporar imágenes rasterizadas (PNG, JPEG, WebP) ni fotografías decorativas; la totalidad de la gráfica debe ser SVG puro y código CSS.",
+      "Don't inventar métricas ficticias, testimonios de clientes o logotipos no verificables."
+    ]
+  }
+}

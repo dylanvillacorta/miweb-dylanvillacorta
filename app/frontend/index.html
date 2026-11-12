@@ -19,8 +19,9 @@
   <link rel="icon" type="image/png" href="/favicon-48x48.png?v=3" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
   <link rel="manifest" href="/site.webmanifest?v=3">
-  <meta name="theme-color" content="#0f0f0f">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <meta name="theme-color" content="#14110f">
+  <link rel="preload" href="fonts/Anton-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=5">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,172 +42,170 @@
 </head>
 <body>
   <a href="#main" class="skip-link">Saltar al contenido</a>
-  <nav class="navbar" aria-label="Navegación principal">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo" aria-label="Dylan Villacorta, ir al inicio"><img src="/logo.svg?v=3" alt="" width="34" height="34"></a>
+  <header class="topbar">
+    <a href="#hero" class="brand" aria-label="Dylan Villacorta, ir al inicio">
+      <svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M8 14L14 8H32C45.3 8 56 18.7 56 32C56 45.3 45.3 56 32 56H14L8 50ZM17.1 21.2L19.3 19L25.6 19L30.1 29.6L34.6 19L40.9 19L43.1 21.2L32.1 43.5L30.6 45L29.6 45L28.1 43.5Z"/></svg>
+    </a>
+    <nav aria-label="Navegación principal">
       <ul class="nav-links">
+        <li><a href="#projects">Proyectos</a></li>
         <li><a href="#about">Sobre mí</a></li>
         <li><a href="#skills">Habilidades</a></li>
-        <li><a href="#projects">Proyectos</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <main id="main">
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <p class="hero-greeting">Hola, soy</p>
-      <h1 class="hero-name">Dylan Villacorta</h1>
-      <p class="hero-role" aria-label="Desarrollador de Software">Desarrollador de Software</p>
-      <p class="hero-tagline">
-        Construyo soluciones robustas con código limpio y eficiente.
-      </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">Ver proyectos</a>
-        <a href="#contact" class="btn btn-outline">Contactar</a>
+  <section id="hero" class="sheet">
+    <div class="sheet-title">
+      <h1 class="title"><span>Dylan</span> <span>Villacorta</span></h1>
+      <div class="sheet-lead">
+        <p class="role">Desarrollador de software · Backend</p>
+        <p class="tagline">Construyo soluciones robustas con código limpio y eficiente.</p>
       </div>
+    </div>
+
+    <div class="wall" aria-hidden="true">
+      <svg class="scene" viewBox="0 0 420 480" preserveAspectRatio="xMidYMax slice" focusable="false">
+        <defs>
+          <g id="figure">
+            <!-- Fedora crown -->
+            <polygon points="57,365 58,352 63,354 68,353 70,365"/>
+            <!-- Fedora brim -->
+            <polygon points="48,368 78,366 76,370 50,372"/>
+            <!-- Collar / lapels -->
+            <polygon points="56,371 63,377 72,371 69,384 58,384"/>
+            <!-- Shoulders / chest -->
+            <polygon points="44,384 84,384 78,410 50,410"/>
+            <!-- Left arm / pocket -->
+            <polygon points="44,384 50,410 45,424 39,420"/>
+            <!-- Right arm -->
+            <polygon points="84,384 88,420 82,424 78,410"/>
+            <!-- Coat skirt -->
+            <polygon points="50,410 78,410 81,438 47,438"/>
+            <!-- Left leg -->
+            <polygon points="51,438 59,438 58,460 50,460"/>
+            <!-- Left shoe -->
+            <polygon points="47,460 59,460 59,456 49,456"/>
+            <!-- Right leg -->
+            <polygon points="68,438 76,438 77,460 69,460"/>
+            <!-- Right shoe -->
+            <polygon points="69,460 81,460 79,456 70,456"/>
+          </g>
+        </defs>
+        <rect class="scene-wall" x="-50" y="0" width="550" height="480"/>
+        <rect class="scene-street" x="-50" y="460" width="550" height="40"/>
+        <use class="scene-shadow" href="#figure"/>
+        <use class="scene-figure" href="#figure"/>
+      </svg>
+    </div>
+
+    <div class="billing">
+      <ul class="credits">
+        <li><a href="#p-go"><span class="credit-name">API REST con Go</span><span class="credit-stack">Go</span></a></li>
+        <li><a href="#p-python"><span class="credit-name">Web Scraper en Python</span><span class="credit-stack">Python</span></a></li>
+        <li><a href="#p-fullstack"><span class="credit-name">Aplicación Full Stack</span><span class="credit-stack">TypeScript · JavaScript</span></a></li>
+        <li><a href="#p-java"><span class="credit-name">Sistema Empresarial</span><span class="credit-stack">Java</span></a></li>
+      </ul>
+      <a href="#contact" class="btn btn-amber">Contactar</a>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="wrap">
+      <h2 class="h2">Proyectos</h2>
+      <div class="project-list">
+        <article class="project" id="p-go">
+          <h3 class="project-title">API REST con Go</h3>
+          <p class="project-stack">Go</p>
+          <p class="project-desc">Microservicio de alto rendimiento construido con Go, utilizando gorilla/mux y PostgreSQL.</p>
+        </article>
+        <article class="project" id="p-python">
+          <h3 class="project-title">Web Scraper en Python</h3>
+          <p class="project-stack">Python</p>
+          <p class="project-desc">Herramienta de extracción de datos web usando BeautifulSoup y procesamiento asíncrono.</p>
+        </article>
+        <article class="project" id="p-fullstack">
+          <h3 class="project-title">Aplicación Full Stack</h3>
+          <p class="project-stack">TypeScript · JavaScript</p>
+          <p class="project-desc">Plataforma web con frontend en React + TypeScript y backend en Node.js.</p>
+        </article>
+        <article class="project" id="p-java">
+          <h3 class="project-title">Sistema Empresarial</h3>
+          <p class="project-stack">Java</p>
+          <p class="project-desc">Aplicación empresarial con Spring Boot, arquitectura de microservicios y base de datos Oracle.</p>
+        </article>
+      </div>
+      <p class="projects-more"><a href="https://github.com/dylanvillacorta" target="_blank" rel="noopener noreferrer">Ver el código en GitHub<span class="sr-only"> (se abre en una pestaña nueva)</span></a></p>
     </div>
   </section>
 
   <section id="about" class="about">
-    <div class="container">
-      <h2 class="section-title">Sobre mí</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>
-            Soy un desarrollador de software apasionado por la tecnología y la creación
-            de soluciones robustas con código limpio, mantenible y eficiente.
-            Me especializo en el desarrollo backend y disfruto trabajar con
-            múltiples lenguajes y paradigmas de programación.
-          </p>
-          <p>
-            Tengo experiencia construyendo APIs REST de alto rendimiento con Go,
-            desarrollando aplicaciones empresariales con Java y Spring Boot,
-            y creando plataformas full stack con TypeScript y Node.js.
-            También trabajo con Python para automatización, web scraping
-            y procesamiento de datos.
-          </p>
-          <p>
-            Me motiva resolver problemas complejos, diseñar arquitecturas
-            escalables y aprender constantemente nuevas herramientas y
-            metodologías para entregar software de calidad. Busco oportunidades
-            donde pueda aportar valor con mis habilidades técnicas y seguir
-            creciendo como profesional.
-          </p>
-        </div>
+    <div class="wrap about-grid">
+      <h2 class="h2">Sobre mí</h2>
+      <div class="about-text">
+        <p>
+          Soy un desarrollador de software apasionado por la tecnología y la creación
+          de soluciones robustas con código limpio, mantenible y eficiente.
+          Me especializo en el desarrollo backend y disfruto trabajar con
+          múltiples lenguajes y paradigmas de programación.
+        </p>
+        <p>
+          Tengo experiencia construyendo APIs REST de alto rendimiento con Go,
+          desarrollando aplicaciones empresariales con Java y Spring Boot,
+          y creando plataformas full stack con TypeScript y Node.js.
+          También trabajo con Python para automatización, web scraping
+          y procesamiento de datos.
+        </p>
+        <p>
+          Me motiva resolver problemas complejos, diseñar arquitecturas
+          escalables y aprender constantemente nuevas herramientas y
+          metodologías para entregar software de calidad. Busco oportunidades
+          donde pueda aportar valor con mis habilidades técnicas y seguir
+          creciendo como profesional.
+        </p>
       </div>
     </div>
   </section>
 
   <section id="skills" class="skills">
-    <div class="container">
-      <h2 class="section-title">Habilidades</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon">
-            <img src="icons/go.svg?v=2" alt="Go">
-          </div>
-          <h3>Go</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <img src="icons/python.svg?v=2" alt="Python">
-          </div>
-          <h3>Python</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <img src="icons/javascript.svg?v=2" alt="JavaScript">
-          </div>
-          <h3>JavaScript</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <img src="icons/typescript.svg?v=2" alt="TypeScript">
-          </div>
-          <h3>TypeScript</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <img src="icons/java.svg?v=2" alt="Java">
-          </div>
-          <h3>Java</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2 class="section-title">Proyectos</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3 class="project-title">API REST con Go</h3>
-          <p class="project-desc">
-            Microservicio de alto rendimiento construido con Go, 
-            utilizando gorilla/mux y PostgreSQL.
-          </p>
-          <div class="project-tags">
-            <span>Go</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Web Scraper en Python</h3>
-          <p class="project-desc">
-            Herramienta de extracción de datos web usando BeautifulSoup 
-            y procesamiento asíncrono.
-          </p>
-          <div class="project-tags">
-            <span>Python</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Aplicación Full Stack</h3>
-          <p class="project-desc">
-            Plataforma web con frontend en React + TypeScript y 
-            backend en Node.js.
-          </p>
-          <div class="project-tags">
-            <span>TypeScript</span>
-            <span>JavaScript</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Sistema Empresarial</h3>
-          <p class="project-desc">
-            Aplicación empresarial con Spring Boot, 
-            arquitectura de microservicios y base de datos Oracle.
-          </p>
-          <div class="project-tags">
-            <span>Java</span>
-          </div>
-        </div>
-      </div>
+    <div class="wrap">
+      <h2 class="h2">Habilidades</h2>
+      <ul class="skill-list">
+        <li>Go</li>
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>Java</li>
+      </ul>
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <div class="container">
-      <h2 class="section-title">Contacto</h2>
-      <p class="contact-text">
-        ¿Tienes un proyecto en mente? Hablemos.
-      </p>
+    <div class="contact-shadow" aria-hidden="true">
+      <svg viewBox="0 0 400 300" preserveAspectRatio="none" focusable="false">
+        <polygon points="120,300 400,60 400,300"/>
+      </svg>
+    </div>
+    <div class="wrap">
+      <h2 class="h2">Contacto</h2>
+      <p class="contact-text">¿Tienes un proyecto en mente? Hablemos.</p>
       <div class="contact-links">
-        <button type="button" class="contact-link email-btn" id="emailBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="emailModal" title="Opciones de correo electrónico">
+        <a href="mailto:dylanvillacortapoma@outlook.com" class="btn btn-amber">
           <svg class="contact-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="4" width="20" height="16" rx="2"></rect>
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
           </svg>
           <span>Email</span>
-        </button>
-        <a href="https://github.com/dylanvillacorta" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="GitHub de Dylan Villacorta (se abre en una pestaña nueva)">
+        </a>
+        <a href="https://github.com/dylanvillacorta" target="_blank" rel="noopener noreferrer" class="btn btn-line" aria-label="GitHub de Dylan Villacorta (se abre en una pestaña nueva)">
           <svg class="contact-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
           </svg>
           <span>GitHub</span>
         </a>
-        <a href="https://www.linkedin.com/in/dylan-villacorta-531ba0274/" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="LinkedIn de Dylan Villacorta (se abre en una pestaña nueva)">
+        <a href="https://www.linkedin.com/in/dylan-villacorta-531ba0274/" target="_blank" rel="noopener noreferrer" class="btn btn-line" aria-label="LinkedIn de Dylan Villacorta (se abre en una pestaña nueva)">
           <svg class="contact-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
           </svg>
@@ -231,112 +230,6 @@
   </section>
   </main>
 
-  <!-- Email Options Modal -->
-  <div id="emailModal" class="email-modal" role="dialog" aria-modal="true" aria-labelledby="emailModalTitle" aria-describedby="emailModalDesc" aria-hidden="true">
-    <div class="email-modal-overlay" data-close-modal></div>
-    <div class="email-modal-container">
-      <div class="email-modal-header">
-        <div class="email-modal-title-group">
-          <h3 id="emailModalTitle" class="email-modal-title">Escríbeme por correo</h3>
-          <p class="email-modal-subtitle" id="emailModalDesc">Elige tu servicio de correo favorito o copia la dirección:</p>
-        </div>
-        <button type="button" class="email-modal-close" data-close-modal aria-label="Cerrar diálogo">
-          <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Direct Email Address Card -->
-      <div class="email-address-card">
-        <div class="email-address-info">
-          <span class="email-address-label">Correo electrónico</span>
-          <span class="email-address-value">dylanvillacortapoma@outlook.com</span>
-        </div>
-        <button type="button" class="btn-copy-action" id="modalCopyBtn" aria-label="Copiar correo al portapapeles">
-          <svg class="copy-icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
-            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
-          </svg>
-          <svg class="check-icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          <span class="copy-text" aria-live="polite">Copiar</span>
-        </button>
-      </div>
-
-      <div class="email-modal-separator">
-        <span>O abrir directamente con</span>
-      </div>
-
-      <!-- Provider Links -->
-      <div class="email-providers">
-        <!-- Gmail -->
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dylanvillacortapoma@outlook.com" target="_blank" rel="noopener noreferrer" class="email-provider-card gmail-card">
-          <div class="provider-icon">
-            <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M1.5 6.5V17.5C1.5 18.6 2.4 19.5 3.5 19.5H6.5V10.5L1.5 6.5Z" fill="#4285F4"/>
-              <path d="M17.5 19.5H20.5C21.6 19.5 22.5 18.6 22.5 17.5V6.5L17.5 10.5V19.5Z" fill="#34A853"/>
-              <path d="M17.5 4.5V10.5L22.5 6.5C22.5 5.05 20.85 4.2 19.75 4.95L17.5 6.6V4.5Z" fill="#FBBC04"/>
-              <path d="M1.5 6.5L6.5 10.5V4.5L4.25 4.95C3.15 4.2 1.5 5.05 1.5 6.5Z" fill="#EA4335"/>
-              <path d="M6.5 10.5L12 14.5L17.5 10.5V4.5H6.5V10.5Z" fill="#EA4335"/>
-            </svg>
-          </div>
-          <div class="provider-details">
-            <span class="provider-name">Gmail<span class="sr-only"> (se abre en una pestaña nueva)</span></span>
-            <span class="provider-desc">Redactar en Gmail Web</span>
-          </div>
-          <svg class="provider-arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-        </a>
-
-        <!-- Outlook -->
-        <a href="https://outlook.live.com/mail/0/deeplink/compose?to=dylanvillacortapoma@outlook.com" target="_blank" rel="noopener noreferrer" class="email-provider-card outlook-card">
-          <div class="provider-icon">
-            <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 32 32">
-              <path fill="#0072C6" d="M18.5 7h10a1.5 1.5 0 0 1 1.5 1.5v15a1.5 1.5 0 0 1-1.5 1.5h-10v-18z"/>
-              <path fill="#005A9E" d="M18.5 16l11.5 8.5V7.5L18.5 16z"/>
-              <path fill="#004578" d="M18.5 7l11.5 8.5L18.5 25V7z"/>
-              <rect x="2" y="5" width="16.5" height="22" rx="2" fill="#0078D4"/>
-              <ellipse cx="10.25" cy="16" rx="4" ry="5.5" fill="#fff" fill-opacity="0.15"/>
-              <path d="M10.25 12.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 5.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4z" fill="#fff"/>
-            </svg>
-          </div>
-          <div class="provider-details">
-            <span class="provider-name">Outlook<span class="sr-only"> (se abre en una pestaña nueva)</span></span>
-            <span class="provider-desc">Redactar en Outlook Web</span>
-          </div>
-          <svg class="provider-arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-        </a>
-
-        <!-- System Default App -->
-        <a href="mailto:dylanvillacortapoma@outlook.com" class="email-provider-card default-mail-card">
-          <div class="provider-icon">
-            <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-            </svg>
-          </div>
-          <div class="provider-details">
-            <span class="provider-name">Aplicación del sistema</span>
-            <span class="provider-desc">Mail, Outlook de escritorio, Thunderbird...</span>
-          </div>
-          <svg class="provider-arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <footer class="footer">
     <p class="footer-copy">&copy; 2026 Dylan Villacorta. Todos los derechos reservados.</p>
     <nav aria-label="Información legal" class="footer-legal">
@@ -346,6 +239,6 @@
     </nav>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

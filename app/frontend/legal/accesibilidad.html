@@ -12,25 +12,28 @@
   <link rel="icon" type="image/png" href="/favicon-48x48.png?v=3" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
   <link rel="manifest" href="/site.webmanifest?v=3">
-  <meta name="theme-color" content="#0f0f0f">
-  <link rel="stylesheet" href="/styles.css?v=4">
-  <link rel="stylesheet" href="/legal/legal.css?v=1">
+  <meta name="theme-color" content="#14110f">
+  <link rel="preload" href="/fonts/Anton-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=5">
+  <link rel="stylesheet" href="/legal/legal.css?v=2">
 </head>
 <body>
   <a href="#main" class="skip-link">Saltar al contenido</a>
-  <nav class="navbar" aria-label="Navegación principal">
-    <div class="nav-container">
-      <a href="/" class="nav-logo" aria-label="Dylan Villacorta, ir al inicio"><img src="/logo.svg?v=3" alt="" width="34" height="34"></a>
+  <header class="topbar">
+    <a href="/" class="brand" aria-label="Dylan Villacorta, ir al inicio">
+      <svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M8 14L14 8H32C45.3 8 56 18.7 56 32C56 45.3 45.3 56 32 56H14L8 50ZM17.1 21.2L19.3 19L25.6 19L30.1 29.6L34.6 19L40.9 19L43.1 21.2L32.1 43.5L30.6 45L29.6 45L28.1 43.5Z"/></svg>
+    </a>
+    <nav aria-label="Navegación principal">
       <ul class="nav-links">
         <li><a href="/">Inicio</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <main id="main" class="legal-page">
     <div class="container legal-container">
       <h1 class="legal-title">Declaración de Accesibilidad</h1>
-      <p class="legal-updated">Última actualización: 7 de noviembre de 2026</p>
+      <p class="legal-updated">Última actualización: 11 de noviembre de 2026</p>
 
       <p>Dylan Villacorta se compromete a que <strong>dylanvillacorta.com</strong> pueda ser usado por la mayor cantidad posible de personas, incluidas las personas con discapacidad, en línea con la Ley N.° 29973 (Ley General de la Persona con Discapacidad, Perú) y el Título III de la <em>Americans with Disabilities Act</em> (ADA, EE. UU.).</p>
 
@@ -42,15 +45,13 @@
         <li>Enlace «Saltar al contenido» para usuarios de teclado y lectores de pantalla.</li>
         <li>Navegación completa por teclado con indicadores de foco visibles.</li>
         <li>Estructura semántica (encabezados, regiones de navegación y contenido principal) e idioma de página declarado.</li>
-        <li>Diálogo de contacto accesible: el foco queda dentro del diálogo, se cierra con la tecla Escape y el foco regresa al botón que lo abrió.</li>
-        <li>Respeto de la preferencia del sistema «reducir movimiento»: se desactivan animaciones y el efecto de escritura.</li>
-        <li>Contraste suficiente entre texto y fondo, y textos alternativos en imágenes informativas.</li>
-        <li>La cuenta regresiva de la página /reu se anuncia a lectores de pantalla de forma resumida, sin lecturas continuas.</li>
+        <li>Respeto de la preferencia del sistema «reducir movimiento»: la única animación del sitio, la oscilación de la sombra del encabezado, se desactiva.</li>
+        <li>Contraste suficiente entre texto y fondo.</li>
         <li>Diseño adaptable a distintos tamaños de pantalla y niveles de zoom.</li>
       </ul>
 
       <h2>Limitaciones conocidas</h2>
-      <p>Seguimos revisando el Sitio. Los íconos de servicios de terceros mostrados en el diálogo de correo son decorativos y el texto del enlace describe su función.</p>
+      <p>Seguimos revisando el Sitio.</p>
 
       <h2>Comentarios y solicitudes de ayuda</h2>
       <p>Si encuentras una barrera de accesibilidad o necesitas la información en otro formato, escribe a <a href="mailto:dylanvillacortapoma@outlook.com">dylanvillacortapoma@outlook.com</a> indicando la página y el problema. Intentaré responder en un plazo de <strong>5 días hábiles</strong>.</p>
